@@ -9,6 +9,7 @@
     content="PixelVault Cloud provides managed S3-compatible image hosting, CDN delivery, secure storage, backup-ready buckets, and professional support for businesses." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="/assets/pixel-vault-logo.png">
+  
   <style>
     * {
       box-sizing: border-box;
@@ -543,7 +544,7 @@
         <div class="cards">
           <div class="card price-card">
             <h3>Starter Cloud</h3>
-            <div class="price">$220 <small>/ month</small></div>
+            <div class="price"  onclick="buyPlan('pri_01krgac9x56hw8z6cfw9t31x72')">$220 <small>/ month</small></div>
             <p>For small business websites, portfolios, and lightweight image delivery.</p>
             <ul>
               <li>S3-compatible image bucket</li>
@@ -686,5 +687,21 @@
     </div>
   </footer>
 </body>
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+  Paddle.Initialize({
+    token: "live_4ea656f6333c7bbb1870dc60b6a"
+  });
 
+  function buyPlan(priceId) {
+    Paddle.Checkout.open({
+      items: [
+        {
+          priceId: priceId,
+          quantity: 1
+        }
+      ]
+    });
+  }
+</script>
 </html>
